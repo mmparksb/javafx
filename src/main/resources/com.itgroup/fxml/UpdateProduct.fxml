@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<?import java.lang.Double?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itgroup.controller.UpdateProductController">
+    <children>
+        <fx:define>
+            <Double fx:id="xLabelPosition" fx:value="56.0"/><!-- 라벨의 x 좌표 위치 -->
+            <Double fx:id="xTextFieldPosition" fx:value="135.0"/><!-- 라벨의 y 좌표 위치 -->
+            <Double fx:id="textFieldWidth" fx:value="200.0"/><!-- 입력 상자의 너비 -->
+        </fx:define>
+        <Label layoutX="$xLabelPosition" layoutY="17.0" text="상품 정보 수정 ">
+            <font>
+                <Font size="25.0"/>
+            </font>
+        </Label>
+        <!-- Product 클래스를 토대로 fxml 파일 내에서 다음과 같이 camle case 표기법으로 작성합니다. -->
+        <Label layoutX="$xLabelPosition" layoutY="60.0" text="">
+            <font>
+                <Font size="15.0" fx:id="myFont01"/>
+            </font>
+        </Label>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="60.0" text="이름"/>
+        <TextField fx:id="fxmlName" promptText="상품명은 2글자 이상 12글자 이하" layoutX="$xTextFieldPosition" layoutY="60.0" prefWidth="$textFieldWidth"/>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="90.0" text="가격"/>
+        <TextField fx:id="fxmlPrice" promptText="10만원 이하로 숫자만 적어주세요" layoutX="$xTextFieldPosition" layoutY="90.0" prefWidth="$textFieldWidth"/>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="120.0" text="재고"/>
+        <TextField fx:id="fxmlStock" promptText="재고는.. 숫자만 100개 이하" layoutX="$xTextFieldPosition" layoutY="120.0" prefWidth="$textFieldWidth"/>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="150.0" text="이미지"/>
+        <TextField fx:id="fxmlImage" promptText="20자 이하의 jpg/png 파일" layoutX="$xTextFieldPosition" layoutY="150.0" prefWidth="$textFieldWidth"/>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="180.0" text="카테고리"/>
+        <ComboBox fx:id="fxmlCategory" layoutX="$xTextFieldPosition" layoutY="180.0" prefWidth="$textFieldWidth">
+            <items>
+                <!-- factory 속성은 자바의 static 메소드를 객체를 생성하고자 할때 사용합니다. -->
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="김밥" />
+                    <String fx:value="소주" />
+                    <String fx:value="맥주" />
+                    <String fx:value="빵" />
+                    <String fx:value="음료수" />
+                    <String fx:value="과자" />
+                    <String fx:value="라면/면" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="210.0" text="행사상품"/>
+        <ComboBox fx:id="fxmlEvent" layoutX="$xTextFieldPosition" layoutY="210.0" prefWidth="$textFieldWidth">
+            <items>
+                <!-- factory 속성은 자바의 static 메소드를 객체를 생성하고자 할때 사용합니다. -->
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="x" />
+                    <String fx:value="1+1" />
+                    <String fx:value="2+1" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="240.0" text="인기상품"/>
+        <TextField fx:id="fxmlBest" promptText="버튼을 눌러" layoutX="$xTextFieldPosition" layoutY="240.0" prefWidth="130"/>
+        <Button onAction="#onBest" text="변경" layoutX="285" layoutY="240.0" prefWidth="50" />
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="270.0" text="유통기한"/>
+        <DatePicker fx:id="fxmlExpirationDate" promptText="날짜를 선택해주세요" layoutX="$xTextFieldPosition" layoutY="270.0" prefWidth="130"/>
+        <Button onAction="#clearExpirationDate" text="삭제" layoutX="285" layoutY="270.0" prefWidth="50" />
+
+        <Label font="$myFont01" layoutX="$xLabelPosition" layoutY="300.0" text="제조일자"/>
+        <DatePicker fx:id="fxmlManufactureDate" promptText="날짜를 선택해주세요" layoutX="$xTextFieldPosition" layoutY="300.0" prefWidth="130"/>
+        <Button onAction="#clearManufactureDate" text="삭제" layoutX="285" layoutY="300.0" prefWidth="50" />
+
+        <Button onAction="#onProductUpdate" text="수정하기" layoutX="$xLabelPosition" layoutY="330.0" prefWidth="280.0" prefHeight="30.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

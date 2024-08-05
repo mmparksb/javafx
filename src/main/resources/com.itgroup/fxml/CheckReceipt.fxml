@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="415.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itgroup.controller.CheckReceiptController">
+    <ListView fx:id="directoryListView" layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0" />
+    <TextArea fx:id="fileContentArea" layoutX="429.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" />
+   <ListView fx:id="fileListView" layoutX="220.0" layoutY="14.0" prefHeight="300.0" prefWidth="200.0" />
+   <Label layoutX="94.0" layoutY="349.0" text="날짜">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label layoutX="300.0" layoutY="349.0" text="시간">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label layoutX="549.0" layoutY="349.0" text="영수증">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+</AnchorPane>

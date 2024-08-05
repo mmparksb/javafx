@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="479.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itgroup.controller.SalesCheckController">
+   <children>
+      <LineChart fx:id="lineChart" layoutX="50.0" layoutY="16.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <DatePicker fx:id="datePicker" layoutX="566.0" layoutY="55.0" />
+       <Button onAction="#searchDateSales" layoutX="700.0" layoutY="80.0" text="조회" />
+      <Label layoutX="566.0" layoutY="9.0" text="매출액을 조회하고 싶은 날짜를 선택하세요." />
+   </children>
+</AnchorPane>

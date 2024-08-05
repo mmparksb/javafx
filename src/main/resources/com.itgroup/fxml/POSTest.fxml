@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itgroup.controller.POSController">
+   <top>
+      <AnchorPane prefHeight="108.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="951.0" layoutY="15.0" text="상품 관리 메뉴" />
+            <Button layoutX="1045.0" layoutY="11.0" mnemonicParsing="false" onAction="#insertProduct" text="상품 등록" />
+            <Button layoutX="1195.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteProduct" text="상품 삭제" />
+            <Button layoutX="1120.0" layoutY="11.0" mnemonicParsing="false" onAction="#updateProduct" text="상품 수정" />
+            <Button layoutX="1120.0" layoutY="41.0" mnemonicParsing="false" onAction="#manageProduct" text="재고 관리" />
+            <Button layoutX="1045.0" layoutY="41.0" mnemonicParsing="false" onAction="#openReceipt" text="판매 내역" />
+            <Button layoutX="1195.0" layoutY="41.0" mnemonicParsing="false" onAction="#salesCheck" text="매출 확인" />
+             <Button layoutX="890.0" layoutY="72.0" mnemonicParsing="false" onAction="#productToReceipt" text="장바구니 담기" />
+            <ComboBox fx:id="categoryComboBox" layoutX="314.0" layoutY="72.0" onAction="#choiceCategory" prefWidth="150.0">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="전체 보기" />
+                  <String fx:value="인기 상품" />
+                  <String fx:value="행사 상품" />
+                  <String fx:value="김밥" />
+                  <String fx:value="소주" />
+                  <String fx:value="맥주" />
+                  <String fx:value="빵" />
+                  <String fx:value="음료수" />
+                  <String fx:value="과자" />
+                  <String fx:value="라면/면" />
+               </FXCollections>
+            </items>
+            </ComboBox>
+            <Button layoutX="692.0" layoutY="72.0" mnemonicParsing="false" onAction="#searchText" text="물건 검색" />
+            <TextField fx:id="searchTextField" layoutX="516.0" layoutY="72.0" promptText="찾고 싶은 물건을 입력하세요" />
+            <Label layoutX="252.0" layoutY="76.0" text="카테고리" />
+            <Label layoutX="478.0" layoutY="76.0" text="검색" />
+            <Label layoutX="1003.0" layoutY="76.0" text="장바구니/계산서">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="pageStatus" layoutX="792.0" layoutY="76.0" text="pagingStatus" />
+            <Button layoutX="314.0" layoutY="41.0" mnemonicParsing="false" onAction="#clear" text="이동" />
+            <Label layoutX="252.0" layoutY="45.0" text="처음화면" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <VBox prefHeight="411.0" prefWidth="681.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="productTableView" prefHeight="450.0" prefWidth="682.0">
+              <columns>
+                <TableColumn prefWidth="138.0" text="C1" />
+                <TableColumn minWidth="0.0" prefWidth="136.0" text="C2" />
+                  <TableColumn prefWidth="136.0" text="Column X" />
+                  <TableColumn prefWidth="136.0" text="Column X" />
+                  <TableColumn prefWidth="136.0" text="Column X" />
+              </columns>
+            </TableView>
+            <Pagination fx:id="pagination" prefHeight="430.0" prefWidth="682.0" />
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="411.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="shoppingCart" prefHeight="430.0" prefWidth="300.0">
+              <columns>
+                <TableColumn prefWidth="100.0" text="이름" />
+                <TableColumn prefWidth="30.0" text="개수" />
+                  <TableColumn prefWidth="70.0" text="가격" />
+                 <TableColumn prefWidth="100.0" text="비고 " />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button layoutX="222.0" layoutY="41.0" mnemonicParsing="false" onAction="#payAndRecord" text="결제하기" />
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteShoppingCartProduct" text="물건 삭제" />
+                  <Label fx:id="totalPrice" layoutX="175.0" layoutY="18.0" text="0 원" />
+                  <Label layoutX="101.0" layoutY="18.0" text="총 가격 : " />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="318.0" pickOnBounds="true" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
