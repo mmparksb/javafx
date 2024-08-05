@@ -33,6 +33,6 @@ public class InsertMember {
             System.out.println("멤버 추가 성공");
         }
 
-        // 나 박정희 나도 push 하고싶어
+        // 나 박정희 나도 push 하고싶어 씨발
     }
 }
