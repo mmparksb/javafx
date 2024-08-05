@@ -13,7 +13,9 @@ public class InsertMember {
         String id = scan.next();
         System.out.print("이름 입력 해 : ");
         String name = scan.next();
-//어쩔
+
+
+
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
@@ -30,5 +32,7 @@ public class InsertMember {
         } else {
             System.out.println("멤버 추가 성공");
         }
+
+        // 나 박정희 나도 push 하고싶어
     }
 }
