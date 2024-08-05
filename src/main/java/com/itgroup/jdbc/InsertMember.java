@@ -13,7 +13,7 @@ public class InsertMember {
         String id = scan.next();
         System.out.print("이름 입력 해 : ");
         String name = scan.next();
-
+//어쩔
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
