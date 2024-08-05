@@ -19,6 +19,7 @@ public class InsertMember {
         // 나 안철수 세 번째 수정함
         // 나 박정희 수정할거임 ㅋㅋz.. 수정시켜주셈
         // 나 박정희 두 번째 임신
+        // .
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
