@@ -19,6 +19,6 @@ public class SelectGender {
             System.out.println("성별 조회 성공");
             System.out.println("성별 회원 수 : " + cnt);
         }
-
+// 깃허브 시험하기 위해서 적었어요
     }
 }
