@@ -15,6 +15,7 @@ public class InsertMember {
         String name = scan.next();
 
         // 나 안철수가 먼저 수정할거임
+        // 나 안철수 한 번 더 수정함
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
