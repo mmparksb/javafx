@@ -14,7 +14,7 @@ public class InsertMember {
         System.out.print("이름 입력 해 : ");
         String name = scan.next();
 
-
+        // 나 안철수 먼저 수정함 ㅋㅋ .먼저 push 함. ㅋㅋ
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
