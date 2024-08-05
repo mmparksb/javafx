@@ -15,6 +15,7 @@ public class InsertMember {
         String name = scan.next();
 
         // 나 안철수 먼저 수정함 ㅋㅋ .먼저 push 함. ㅋㅋ
+        //근데 왜이래 도대체
         Member bean = new Member();
         bean.setId(id);
         bean.setName(name);
